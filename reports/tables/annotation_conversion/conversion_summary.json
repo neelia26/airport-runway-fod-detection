@@ -1,0 +1,50 @@
+{
+  "conversion": {
+    "images": 33793,
+    "objects": 34472,
+    "source_category_count": 31,
+    "target_classes": {
+      "0": "FOD"
+    },
+    "partition_images": {
+      "train": 23602,
+      "validation": 5111,
+      "test": 5080
+    },
+    "partition_objects": {
+      "train": 24281,
+      "validation": 5111,
+      "test": 5080
+    },
+    "partition_multi_object_images": {
+      "train": 679,
+      "validation": 0,
+      "test": 0
+    },
+    "maximum_roundtrip_error_pixels": 1.500000053056283e-06
+  },
+  "verification": {
+    "checks": {
+      "all_manifest_images_present": true,
+      "one_label_file_per_image": true,
+      "all_objects_preserved": true,
+      "all_labels_are_single_class_fod": true
+    },
+    "image_counts": {
+      "train": 23602,
+      "validation": 5111,
+      "test": 5080
+    },
+    "label_counts": {
+      "train": 23602,
+      "validation": 5111,
+      "test": 5080
+    },
+    "object_counts": {
+      "train": 24281,
+      "validation": 5111,
+      "test": 5080
+    },
+    "invalid_lines": []
+  }
+}

@@ -7,3 +7,5 @@ Current commands:
 - `python scripts/build_leakage_resistant_split.py` rebuilds the frozen manifests.
 - `python scripts/verify_split.py` independently checks completeness, uniqueness and sequence isolation.
 - `python scripts/run_eda.py` generates the exploratory-analysis tables, figures and example grids.
+- `python scripts/convert_voc_to_yolo.py` validates Pascal VOC XML and creates the local single-class YOLO dataset.
+- `python scripts/verify_yolo_conversion.py` independently checks image-label coverage, object preservation and label syntax.

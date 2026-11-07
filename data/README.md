@@ -21,3 +21,5 @@ Project-generated data will use the following locations:
 - `data/processed/`: any other model-ready derived data
 
 Only documentation belongs in Git until a generated artefact is deliberately selected as small, stable evidence.
+
+The YOLO directory is generated with separate `images/` and `labels/` folders for `train`, `validation` and `test`. Each source image is copied rather than moved, and each of the 31 original categories is mapped to class `0: FOD`. The original Pascal VOC dataset remains the source of truth.
