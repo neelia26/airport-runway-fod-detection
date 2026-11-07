@@ -16,6 +16,14 @@ dependencies = [
 dev = [
     "pytest>=8.0",
 ]
+analysis = [
+    "jupyter>=1.1",
+    "matplotlib>=3.9",
+    "nbconvert>=7.16",
+    "nbformat>=5.10",
+    "pandas>=2.2",
+    "seaborn>=0.13",
+]
 
 [tool.setuptools.packages.find]
 where = ["src"]

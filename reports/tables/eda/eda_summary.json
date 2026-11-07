@@ -1,0 +1,60 @@
+{
+  "images": 33793,
+  "annotations": 33793,
+  "objects": 34472,
+  "categories": 31,
+  "partition_images": {
+    "train": 23602,
+    "validation": 5111,
+    "test": 5080
+  },
+  "lighting_images": {
+    "Bright": 16942,
+    "Dim": 12464,
+    "Dark": 4387
+  },
+  "weather_images": {
+    "Dry": 26577,
+    "Wet": 7216
+  },
+  "objects_per_image": {
+    "1": 33114,
+    "2": 679
+  },
+  "object_sizes": {
+    "Small": 9852,
+    "Medium": 15960,
+    "Large": 8660
+  },
+  "box_area_fraction_percentiles": {
+    "0": 0.000238,
+    "0.1": 0.002419,
+    "0.25": 0.009356,
+    "0.5": 0.036121,
+    "0.75": 0.102903,
+    "0.9": 0.214863,
+    "1": 0.864285
+  },
+  "class_lighting_cramers_v": 0.5321,
+  "class_weather_cramers_v": 0.5099,
+  "lowest_contrast_image_ids": [
+    "011212",
+    "011213",
+    "011214",
+    "011211",
+    "011210",
+    "011208",
+    "011215",
+    "011209"
+  ],
+  "smallest_object_image_ids": [
+    "010062",
+    "010061",
+    "010060",
+    "010059",
+    "010058",
+    "006571",
+    "006575",
+    "006572"
+  ]
+}

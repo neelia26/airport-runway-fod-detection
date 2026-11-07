@@ -4,7 +4,7 @@ The coursework notebook will be developed as a clear, reproducible narrative rat
 
 Planned notebook order:
 
-1. `01_dataset_exploration.ipynb`
+1. `01_exploratory_data_analysis.ipynb` — complete and executed
 2. `02_split_validation.ipynb`
 3. `03_preprocessing_analysis.ipynb`
 4. `04_model_training.ipynb`
