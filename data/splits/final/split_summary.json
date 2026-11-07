@@ -1,0 +1,76 @@
+{
+  "method": "Consecutive image IDs remain together when weather, lighting, object labels and perceptual similarity agree. Whole groups are assigned within each weather-light stratum.",
+  "parameters": {
+    "ratios": {
+      "train": 0.7,
+      "validation": 0.15,
+      "test": 0.15
+    },
+    "seed": 42,
+    "max_dhash_distance": 16
+  },
+  "verification": {
+    "checks": {
+      "all_images_assigned": true,
+      "no_duplicate_image_ids": true,
+      "no_cross_partition_image_ids": true,
+      "no_sequence_crosses_partitions": true,
+      "all_partitions_non_empty": true
+    },
+    "image_count": 33793,
+    "sequence_count": 571,
+    "partition_counts": {
+      "train": 23602,
+      "validation": 5111,
+      "test": 5080
+    },
+    "duplicate_image_ids": 0,
+    "cross_partition_image_ids": [],
+    "crossing_sequence_groups": []
+  },
+  "official_partition_repairs": {
+    "repeated_train_entries_removed": 47,
+    "repeated_test_entries_removed": 19,
+    "shared_train_test_ids_resolved": [
+      "014567",
+      "015731",
+      "016653",
+      "016763"
+    ],
+    "omitted_images_assigned": 70,
+    "omitted_id_range": [
+      "033723",
+      "033792"
+    ]
+  },
+  "sequence_statistics": {
+    "adjacent_pairs_with_matching_metadata": 33676,
+    "pairs_within_dhash_threshold": 33222,
+    "pairs_within_dhash_threshold_percent": 98.65,
+    "sequence_size_images": {
+      "minimum": 1,
+      "median": 8,
+      "maximum": 1227
+    }
+  },
+  "condition_counts": {
+    "train": {
+      "weather_0_light_0": 11860,
+      "weather_0_light_1": 3674,
+      "weather_0_light_2": 3066,
+      "weather_1_light_1": 5002
+    },
+    "validation": {
+      "weather_0_light_0": 2541,
+      "weather_0_light_1": 787,
+      "weather_0_light_2": 697,
+      "weather_1_light_1": 1086
+    },
+    "test": {
+      "weather_0_light_0": 2541,
+      "weather_0_light_1": 787,
+      "weather_0_light_2": 624,
+      "weather_1_light_1": 1128
+    }
+  }
+}
