@@ -1,6 +1,6 @@
 # Code Licence
 
-Copyright (c) 2026 Neelia
+Copyright (c) 2026 Neelia Makuloluwa
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of the code and documentation files in this repository, to deal in the code without restriction, including the rights to use, copy, modify, merge, publish, distribute, sublicense, and sell copies, subject to inclusion of this copyright notice and permission notice.
 
