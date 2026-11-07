@@ -61,7 +61,7 @@ The project will therefore create a sequence-aware split before training. Aggreg
 
 ## Repository status
 
-The dataset audit, leakage-resistant partitioning and exploratory analysis stages are complete. The verified split contains 23,602 training, 5,111 validation and 5,080 test images in 571 isolated sequence groups. The EDA confirms 9,852 small, 15,960 medium and 8,660 large objects, alongside meaningful category associations with lighting and weather. Model results will be added only after annotation conversion and preprocessing analysis have been completed.
+The dataset audit, leakage-resistant partitioning, exploratory analysis and annotation conversion stages are complete. The verified split contains 23,602 training, 5,111 validation and 5,080 test images in 571 isolated sequence groups. The EDA confirms 9,852 small, 15,960 medium and 8,660 large objects, alongside meaningful category associations with lighting and weather. All 34,472 source objects have been converted to the single model class `0: FOD`. Model results will be added only after preprocessing analysis has been completed.
 
 ## Repository structure
 
@@ -121,3 +121,14 @@ jupyter nbconvert --to notebook --execute --inplace notebooks/01_exploratory_dat
 ```
 
 The executed notebook is stored at `notebooks/01_exploratory_data_analysis.ipynb`. Its report-ready figures and compact evidence tables are stored under `reports/figures/eda/` and `reports/tables/eda/`.
+
+## Reproduce the YOLO conversion
+
+```bash
+python scripts/convert_voc_to_yolo.py
+python scripts/verify_yolo_conversion.py
+```
+
+The generated `data/yolo/` directory is local and ignored by Git. It contains copied images, single-class YOLO label files and `dataset.yaml`; the original JPEG and XML files remain unchanged. The repository retains the conversion code, verification summary and visual box check.
+
+The leakage-resistant split places the dataset's single 679-image multi-object sequence entirely in training. Validation and test therefore assess single-object frames only; this is recorded as a dataset limitation rather than weakening sequence isolation.
