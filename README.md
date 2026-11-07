@@ -6,6 +6,14 @@ This repository contains the coursework implementation for a machine-vision syst
 
 > How reliably can a lightweight deep-learning model detect airport Foreign Object Debris of different sizes across runway lighting and weather conditions when evaluated using a sequence-aware, leakage-resistant data split?
 
+## Conceptual operational context
+
+![Conceptual airport runway FOD detection workflow](docs/images/fod_detection_conceptual_workflow.png)
+
+*Figure: User-provided conceptual workflow showing how runway cameras, image transfer, real-time processing, FOD detection and operator warnings could form a complete operational system.*
+
+This diagram provides the wider application context. The coursework prototype focuses on the central image-processing and FOD-detection components using the available still-image dataset; it does not claim to implement live camera transfer or an operational airport alarm system.
+
 ## Intended system
 
 The system will accept a runway image and return the location and confidence of detected debris. The initial implementation will treat all 31 source categories as a single `FOD` class so that the project focuses on reliable hazard localisation rather than fine-grained object naming.
@@ -35,6 +43,8 @@ Official sources:
 - [FOD-A publication](https://arxiv.org/abs/2110.03072)
 
 The downloaded dataset is kept locally in `FOD-A Dataset/` and is intentionally excluded from Git.
+
+The field definitions, environmental-code meanings, annotation conventions and derived analysis variables are documented in the [data dictionary](data/DATA_DICTIONARY.md). Importantly, the dataset publisher defines bright, dim, dark, dry and wet as qualitative categories and does not publish numerical lux or surface-moisture thresholds.
 
 ## Dataset audit
 
