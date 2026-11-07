@@ -52,3 +52,37 @@ The project will therefore create a sequence-aware split before training. Aggreg
 ## Repository status
 
 The project is currently at the dataset validation and preprocessing stage. Model results will be added only after the leakage-resistant split and preprocessing pipeline have been completed.
+
+## Repository structure
+
+```text
+.
+├── audit/                 # Dataset-integrity audit and its verified summary
+├── configs/               # Version-controlled experiment configurations
+├── data/
+│   ├── README.md          # Local dataset layout and provenance
+│   └── splits/            # Generated split manifests (ignored by default)
+├── notebooks/             # Numbered coursework and exploratory notebooks
+├── reports/
+│   ├── figures/           # Figures intended for the report
+│   └── tables/            # Tables intended for the report
+├── scripts/               # Thin command-line entry points
+├── src/fod_detection/     # Reusable project code
+│   ├── data/              # Parsing, validation and split construction
+│   ├── preprocessing/     # Classical machine-vision transformations
+│   ├── models/            # Training and inference code
+│   └── evaluation/        # Metrics and condition-aware analysis
+└── tests/                 # Automated checks for reusable code
+```
+
+The downloaded dataset remains in the local `FOD-A Dataset/` directory and is not committed. Generated datasets, split manifests, model weights and experiment runs are also ignored. Code, configuration, documentation and final report-ready results should be version controlled.
+
+## Planned workflow
+
+1. Audit and validate the Pascal VOC images and annotations.
+2. Construct and verify a sequence-aware, leakage-resistant split.
+3. Convert the annotations to the single-class YOLO format.
+4. Analyse object size, lighting, weather and classical visibility cues.
+5. Train and evaluate a lightweight object-detection baseline.
+6. Run controlled preprocessing and robustness experiments.
+7. Export reproducible figures, tables and notebook evidence for the report.

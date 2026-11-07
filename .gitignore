@@ -2,6 +2,10 @@
 *.zip
 *.tar
 *.tar.gz
+.env
+.venv/
+.idea/
+.vscode/
 
 # Local coursework material and downloaded dataset
 /FOD-A Dataset/
@@ -10,10 +14,22 @@
 
 # Generated training artefacts
 /data/processed/
+/data/interim/
+/data/yolo/
+/data/splits/*.csv
+/data/splits/*.json
+/data/splits/*.txt
 /models/
 /runs/
 /outputs/
 /tmp/
+/reports/figures/generated/
+/reports/tables/generated/
 __pycache__/
 *.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Keep split documentation while ignoring generated manifests
+!/data/splits/README.md
 
