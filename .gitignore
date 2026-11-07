@@ -2,7 +2,18 @@
 *.zip
 *.tar
 *.tar.gz
-images/
-standardised_raw/
-augmented/
+
+# Local coursework material and downloaded dataset
+/FOD-A Dataset/
+/Lectures/
+/CM4610 - Assessment Brief - 2026-2027.docx
+
+# Generated training artefacts
+/data/processed/
+/models/
+/runs/
+/outputs/
+/tmp/
+__pycache__/
+*.py[cod]
 

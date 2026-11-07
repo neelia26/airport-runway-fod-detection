@@ -1,65 +1,54 @@
-# Sri Lankan Tea Leaf Dataset Metadata
+# Airport Runway Foreign Object Debris Detection
 
-This repository provides the metadata, class-count summary, and leakage-safe split manifests for the **Sri Lankan Tea Leaf Dataset**. The image files are intentionally not duplicated here. Download the complete image dataset from the authoritative Mendeley Data record:
+This repository contains the coursework implementation for a machine-vision system that detects Foreign Object Debris (FOD) in airport runway and taxiway images using deep learning.
 
-- **Official dataset:** [Sri Lankan Tea Leaf Dataset, Version 5](https://doi.org/10.17632/sjmy6k24d6.5)
-- **Mendeley Data page:** <https://data.mendeley.com/datasets/sjmy6k24d6/5>
-- **Licence:** [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/)
+## Research question
 
-## Dataset summary
+> How reliably can a lightweight deep-learning model detect airport Foreign Object Debris of different sizes across runway lighting and weather conditions when evaluated using a sequence-aware, leakage-resistant data split?
 
-The dataset contains standardized RGB photographs of six tea-leaf conditions:
+## Intended system
 
-- Algal leaf spot
-- Black blight
-- Blister blight
-- Gray blight
-- Healthy
-- Spider mites
+The system will accept a runway image and return the location and confidence of detected debris. The initial implementation will treat all 31 source categories as a single `FOD` class so that the project focuses on reliable hazard localisation rather than fine-grained object naming.
 
-The metadata describes:
+The implementation will combine selected machine-vision techniques with a lightweight deep-learning object detector:
 
-- **1,791 standardized original images**
-- **4,177 generated augmentation variants**
-- **5,968 total entries** in the expanded set, including standardized-original copies
-- **1,151 field originals**
-- **640 controlled-environment originals**
+- Intensity and contrast analysis across bright, dim and dark images
+- CLAHE as a controlled local-contrast preprocessing experiment
+- Edge and small-object visibility analysis
+- Thresholding and morphology as a conventional baseline
+- Multiresolution analysis for small debris
+- Lightweight YOLO-based object detection
 
-All stored images in the official release are standardized to 1024 × 1024 pixels. Aspect-ratio-preserving resizing and white padding were used where required.
+## Dataset
 
-## Repository contents
+The project uses **FOD-A Version 2.1 in Pascal VOC format**, published by the University of Nebraska at Omaha Aviation Institute.
 
-The [`metadata`](metadata/) directory contains:
+- 33,793 RGB images at 300 x 300 pixels
+- 33,793 Pascal VOC XML annotation files
+- 34,472 annotated objects from 31 source categories
+- Dry and wet pavement labels
+- Bright, dim and dark lighting labels
 
-| File | Purpose |
-|---|---|
-| `README_metadata.txt` | Field definitions, preprocessing notes, and recommended experimental use |
-| `SLTeaLeaf_class_count_summary.csv` | Class and acquisition-condition counts |
-| `SLTeaLeaf_metadata_raw.csv` | Metadata for the 1,791 standardized originals |
-| `SLTeaLeaf_metadata_augmented.csv` | Metadata for the 5,968-entry expanded set |
-| `train_original_plus_augmented_baseid_split.csv` | Training manifest with original and augmented entries |
-| `validation_original_only_baseid_split.csv` | Original-image validation manifest |
-| `test_original_only_baseid_split.csv` | Original-image test manifest |
+Official sources:
 
-## Leakage-safe use
+- [FOD-A dataset repository](https://github.com/FOD-UNOmaha/FOD-data)
+- [FOD-A publication](https://arxiv.org/abs/2110.03072)
 
-Generated variants are linked to their standardized source photograph through `base_image_id`. All entries sharing the same `base_image_id` should remain in the same data partition. Generated variants should normally be restricted to training, while validation and test evaluation should use original images.
+The downloaded dataset is kept locally in `FOD-A Dataset/` and is intentionally excluded from Git.
 
-The supplied split manifests follow this design. Researchers should also report acquisition conditions when combining field and controlled-environment images because these settings may differ in background, lighting, framing, and device characteristics.
+## Dataset audit
 
-## Images
+The local audit confirmed that all images and XML annotations are readable and that all bounding boxes are valid. It also identified problems in the supplied partition files:
 
-This repository does **not** contain the 2.7 GB image collection. Download the images from the official Mendeley Data record and follow the repository-relative paths recorded in the metadata.
+- Four image IDs occur in both training and testing
+- Split files contain repeated entries
+- Seventy images are absent from both supplied partitions
+- Visually similar sequential frames cross the supplied partitions
+- Debris category is associated with weather and lighting
+- 9,057 objects occupy less than one percent of the image
 
-## Citation
+The project will therefore create a sequence-aware split before training. Aggregate performance will be supplemented with object-size, lighting and weather analyses, with particular attention to missed detections.
 
-Please cite the original dataset rather than this metadata mirror:
+## Repository status
 
-> Ganesalingam, V., Nasser, M., Osman Ibrahim, A., AbdElgader, E. S., A. Gabralla, L., Ravi, V. and Kandiah, P. (2026). *Sri Lankan Tea Leaf Dataset*. Version 5. Mendeley Data. <https://doi.org/10.17632/sjmy6k24d6.5>
-
-A machine-readable citation is provided in [`CITATION.cff`](CITATION.cff).
-
-## Licence and attribution
-
-The original Mendeley Data release is distributed under the Creative Commons Attribution 4.0 International licence. See [`LICENSE.md`](LICENSE.md) for attribution and reuse information. Users remain responsible for reviewing the authoritative dataset record and complying with its current terms.
-
+The project is currently at the dataset validation and preprocessing stage. Model results will be added only after the leakage-resistant split and preprocessing pipeline have been completed.

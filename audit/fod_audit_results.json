@@ -1,0 +1,500 @@
+{
+  "images": 33793,
+  "annotations": 33793,
+  "objects": 34472,
+  "classes": {
+    "Battery": 1059,
+    "Bolt": 3300,
+    "BoltWasher": 1017,
+    "ClampPart": 917,
+    "MetalPart": 970,
+    "Cutter": 1352,
+    "PlasticPart": 2008,
+    "LuggageTag": 1686,
+    "Nail": 1193,
+    "Pliers": 2884,
+    "Label": 1310,
+    "Washer": 2139,
+    "Wrench": 2568,
+    "FuelCap": 548,
+    "Nut": 1303,
+    "MetalSheet": 394,
+    "Hose": 294,
+    "AdjustableClamp": 544,
+    "AdjustableWrench": 472,
+    "BoltNutSet": 514,
+    "Hammer": 760,
+    "LuggagePart": 738,
+    "PaintChip": 968,
+    "Pen": 483,
+    "Rock": 662,
+    "Screw": 157,
+    "Screwdriver": 811,
+    "Wire": 2138,
+    "SodaCan": 950,
+    "Tape": 127,
+    "Wood": 206
+  },
+  "weather": {
+    "1": 7216,
+    "0": 26577
+  },
+  "light": {
+    "1": 12464,
+    "2": 4387,
+    "0": 16942
+  },
+  "splits": {
+    "trainval": 25298,
+    "test": 8425,
+    "unassigned": 70
+  },
+  "split_overlap_ids": 4,
+  "objects_per_image": {
+    "1": 33114,
+    "2": 679
+  },
+  "invalid_boxes_or_xml": 0,
+  "unreadable": 0,
+  "dimensions": {
+    "(300, 300)": 33793
+  },
+  "modes": {
+    "RGB": 33793
+  },
+  "box_area_fraction": {
+    "min": 0.00023790320400000057,
+    "p10": 0.002419251694444447,
+    "median": 0.03612251551766667,
+    "p90": 0.21486666605600002,
+    "max": 0.8642853824853333
+  },
+  "box_width_fraction": {
+    "min": 0.01124200000000002,
+    "p10": 0.04331766666666667,
+    "median": 0.16150933333333337,
+    "p90": 0.4499889999999999,
+    "max": 1.0
+  },
+  "box_height_fraction": {
+    "min": 0.011131333333333333,
+    "p10": 0.047467666666666686,
+    "median": 0.21607433333333334,
+    "p90": 0.5719626666666666,
+    "max": 1.0
+  },
+  "tiny_objects_under_1pct": 9057,
+  "tiny_by_class": {
+    "Battery": 530,
+    "Bolt": 1606,
+    "BoltWasher": 658,
+    "MetalPart": 254,
+    "ClampPart": 139,
+    "Cutter": 33,
+    "LuggageTag": 266,
+    "Nail": 1046,
+    "Label": 424,
+    "Washer": 1296,
+    "Wrench": 1264,
+    "FuelCap": 58,
+    "Nut": 840,
+    "AdjustableClamp": 2,
+    "AdjustableWrench": 28,
+    "BoltNutSet": 213,
+    "Pliers": 45,
+    "LuggagePart": 28,
+    "Pen": 31,
+    "PlasticPart": 38,
+    "Rock": 190,
+    "Screw": 44,
+    "Tape": 20,
+    "Wire": 4
+  },
+  "exact_duplicate_groups": 0,
+  "exact_duplicate_images": 0,
+  "cross_split_exact_duplicate_groups": 0,
+  "cross_split_examples": [],
+  "dhash_collision_groups": 2792,
+  "dhash_collision_images": 9570,
+  "class_weather_cramers_v": 0.5099386202673167,
+  "class_light_cramers_v": 0.5321025409940536,
+  "class_split_cramers_v": 0.11476003962125568,
+  "class_weather": {
+    "Battery": {
+      "1": 700,
+      "0": 359
+    },
+    "Bolt": {
+      "0": 3300
+    },
+    "BoltWasher": {
+      "0": 276,
+      "1": 741
+    },
+    "ClampPart": {
+      "1": 118,
+      "0": 799
+    },
+    "MetalPart": {
+      "0": 750,
+      "1": 220
+    },
+    "Cutter": {
+      "1": 838,
+      "0": 514
+    },
+    "PlasticPart": {
+      "1": 592,
+      "0": 1416
+    },
+    "LuggageTag": {
+      "0": 1450,
+      "1": 236
+    },
+    "Nail": {
+      "0": 1005,
+      "1": 188
+    },
+    "Pliers": {
+      "0": 2668,
+      "1": 216
+    },
+    "Label": {
+      "0": 1185,
+      "1": 125
+    },
+    "Washer": {
+      "0": 2139
+    },
+    "Wrench": {
+      "0": 2430,
+      "1": 138
+    },
+    "FuelCap": {
+      "1": 206,
+      "0": 342
+    },
+    "Nut": {
+      "0": 1033,
+      "1": 270
+    },
+    "MetalSheet": {
+      "0": 394
+    },
+    "Hose": {
+      "0": 294
+    },
+    "AdjustableClamp": {
+      "0": 544
+    },
+    "AdjustableWrench": {
+      "0": 472
+    },
+    "BoltNutSet": {
+      "0": 514
+    },
+    "Hammer": {
+      "1": 170,
+      "0": 590
+    },
+    "LuggagePart": {
+      "1": 210,
+      "0": 528
+    },
+    "PaintChip": {
+      "0": 586,
+      "1": 382
+    },
+    "Pen": {
+      "1": 159,
+      "0": 324
+    },
+    "Rock": {
+      "1": 210,
+      "0": 452
+    },
+    "Screw": {
+      "0": 157
+    },
+    "Screwdriver": {
+      "1": 271,
+      "0": 540
+    },
+    "Wire": {
+      "0": 1432,
+      "1": 706
+    },
+    "SodaCan": {
+      "1": 314,
+      "0": 636
+    },
+    "Tape": {
+      "0": 127
+    },
+    "Wood": {
+      "1": 206
+    }
+  },
+  "class_light": {
+    "Battery": {
+      "1": 886,
+      "2": 173
+    },
+    "Bolt": {
+      "2": 182,
+      "0": 3118
+    },
+    "BoltWasher": {
+      "0": 134,
+      "1": 883
+    },
+    "ClampPart": {
+      "1": 460,
+      "0": 129,
+      "2": 328
+    },
+    "MetalPart": {
+      "2": 341,
+      "0": 120,
+      "1": 509
+    },
+    "Cutter": {
+      "1": 1014,
+      "2": 188,
+      "0": 150
+    },
+    "PlasticPart": {
+      "1": 1305,
+      "0": 500,
+      "2": 203
+    },
+    "LuggageTag": {
+      "0": 1104,
+      "1": 402,
+      "2": 180
+    },
+    "Nail": {
+      "0": 1005,
+      "1": 188
+    },
+    "Pliers": {
+      "0": 2282,
+      "1": 421,
+      "2": 181
+    },
+    "Label": {
+      "0": 834,
+      "1": 287,
+      "2": 189
+    },
+    "Washer": {
+      "0": 1797,
+      "1": 170,
+      "2": 172
+    },
+    "Wrench": {
+      "0": 2048,
+      "1": 311,
+      "2": 209
+    },
+    "FuelCap": {
+      "1": 429,
+      "0": 119
+    },
+    "Nut": {
+      "0": 612,
+      "1": 370,
+      "2": 321
+    },
+    "MetalSheet": {
+      "0": 394
+    },
+    "Hose": {
+      "0": 294
+    },
+    "AdjustableClamp": {
+      "0": 544
+    },
+    "AdjustableWrench": {
+      "0": 472
+    },
+    "BoltNutSet": {
+      "0": 514
+    },
+    "Hammer": {
+      "1": 419,
+      "2": 202,
+      "0": 139
+    },
+    "LuggagePart": {
+      "1": 564,
+      "2": 174
+    },
+    "PaintChip": {
+      "0": 177,
+      "1": 568,
+      "2": 223
+    },
+    "Pen": {
+      "1": 340,
+      "2": 143
+    },
+    "Rock": {
+      "1": 325,
+      "2": 152,
+      "0": 185
+    },
+    "Screw": {
+      "1": 157
+    },
+    "Screwdriver": {
+      "1": 439,
+      "0": 372
+    },
+    "Wire": {
+      "2": 497,
+      "0": 404,
+      "1": 1237
+    },
+    "SodaCan": {
+      "1": 574,
+      "0": 174,
+      "2": 202
+    },
+    "Tape": {
+      "2": 127
+    },
+    "Wood": {
+      "1": 206
+    }
+  },
+  "class_split": {
+    "Battery": {
+      "trainval": 783,
+      "test": 276
+    },
+    "Bolt": {
+      "trainval": 2468,
+      "test": 832
+    },
+    "BoltWasher": {
+      "trainval": 771,
+      "test": 246
+    },
+    "ClampPart": {
+      "trainval": 725,
+      "test": 192
+    },
+    "MetalPart": {
+      "trainval": 733,
+      "test": 237
+    },
+    "Cutter": {
+      "test": 371,
+      "trainval": 981
+    },
+    "PlasticPart": {
+      "trainval": 1521,
+      "test": 487
+    },
+    "LuggageTag": {
+      "test": 413,
+      "trainval": 1273
+    },
+    "Nail": {
+      "trainval": 904,
+      "test": 289
+    },
+    "Pliers": {
+      "trainval": 2153,
+      "test": 731
+    },
+    "Label": {
+      "test": 342,
+      "trainval": 968
+    },
+    "Washer": {
+      "test": 577,
+      "trainval": 1562
+    },
+    "Wrench": {
+      "trainval": 1870,
+      "test": 628,
+      "unassigned": 70
+    },
+    "FuelCap": {
+      "test": 126,
+      "trainval": 422
+    },
+    "Nut": {
+      "trainval": 982,
+      "test": 321
+    },
+    "MetalSheet": {
+      "trainval": 306,
+      "test": 88
+    },
+    "Hose": {
+      "test": 77,
+      "trainval": 217
+    },
+    "AdjustableClamp": {
+      "test": 157,
+      "trainval": 387
+    },
+    "AdjustableWrench": {
+      "trainval": 359,
+      "test": 113
+    },
+    "BoltNutSet": {
+      "trainval": 389,
+      "test": 125
+    },
+    "Hammer": {
+      "trainval": 591,
+      "test": 169
+    },
+    "LuggagePart": {
+      "trainval": 538,
+      "test": 200
+    },
+    "PaintChip": {
+      "trainval": 713,
+      "test": 255
+    },
+    "Pen": {
+      "test": 116,
+      "trainval": 367
+    },
+    "Rock": {
+      "trainval": 489,
+      "test": 173
+    },
+    "Screw": {
+      "test": 37,
+      "trainval": 120
+    },
+    "Screwdriver": {
+      "test": 194,
+      "trainval": 617
+    },
+    "Wire": {
+      "trainval": 1611,
+      "test": 527
+    },
+    "SodaCan": {
+      "trainval": 726,
+      "test": 224
+    },
+    "Tape": {
+      "trainval": 95,
+      "test": 32
+    },
+    "Wood": {
+      "test": 54,
+      "trainval": 152
+    }
+  },
+  "invalid_examples": [],
+  "unreadable_examples": []
+}
