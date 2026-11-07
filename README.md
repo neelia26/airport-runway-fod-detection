@@ -152,3 +152,5 @@ The version-controlled protocol is documented in `docs/BASELINE_TRAINING.md`, an
 ```
 
 The smoke test verifies data loading, single-class model construction, MPS backpropagation, validation and checkpoint saving. Its metrics are deliberately excluded from the research results because one epoch on 32 training images is not a meaningful experiment.
+
+For GPU training through a Jupyter environment, open `notebooks/04_baseline_training_colab.ipynb` in Google Colab. The notebook reproduces the same dataset conversion and baseline configuration, then saves the run back to the user's Google Drive.

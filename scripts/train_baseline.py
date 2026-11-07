@@ -26,7 +26,7 @@ def parse_arguments() -> argparse.Namespace:
     )
     parser.add_argument(
         "--device",
-        choices=["mps", "cpu"],
+        choices=["mps", "cuda", "cpu"],
         help="Override the configured training device.",
     )
     parser.add_argument("--epochs", type=int, help="Override the configured epoch count.")
@@ -47,10 +47,13 @@ def load_config(path: Path) -> dict[str, object]:
 
 
 def choose_device(configured: str) -> str:
-    """Use MPS only when PyTorch reports that it is available."""
+    """Use a requested accelerator only when PyTorch reports it available."""
 
     if configured == "mps" and not torch.backends.mps.is_available():
         print("MPS is unavailable; falling back to CPU")
+        return "cpu"
+    if configured == "cuda" and not torch.cuda.is_available():
+        print("CUDA is unavailable; falling back to CPU")
         return "cpu"
     return configured
 

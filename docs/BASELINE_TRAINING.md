@@ -44,6 +44,18 @@ Start the full baseline:
 
 The full run is resumable from its generated `last.pt` checkpoint using Ultralytics if interrupted. Training runs and weights remain excluded from Git because of their size; compact metrics and selected figures will be committed after verification.
 
+## Google Colab workflow
+
+Use `notebooks/04_baseline_training_colab.ipynb` when local training is impractical. Before running it:
+
+1. Upload `FODPascalVOCFormat-V.2.1.zip` to a folder in your Google Drive.
+2. Open the notebook in Google Colab.
+3. Select **Runtime → Change runtime type → T4 GPU** (or another available GPU).
+4. Update the Drive path in the configuration cell if your ZIP is stored elsewhere.
+5. Run the cells from top to bottom.
+
+The notebook clones the `baseline-model-training` branch, extracts the source dataset into Colab's temporary storage, reproduces the YOLO conversion, runs the unchanged baseline configuration with `device=cuda`, and copies the complete run directory back to Google Drive.
+
 ## Experimental control
 
 The Gaussian and median experiments must use this same architecture, initialization, split, image size, batch size, epoch limit, patience and seed. Changing multiple factors simultaneously would prevent a defensible preprocessing comparison.
