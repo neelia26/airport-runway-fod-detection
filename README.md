@@ -51,7 +51,7 @@ The project will therefore create a sequence-aware split before training. Aggreg
 
 ## Repository status
 
-The project is currently at the dataset validation and preprocessing stage. Model results will be added only after the leakage-resistant split and preprocessing pipeline have been completed.
+The dataset audit and leakage-resistant partitioning stage is complete. The verified split contains 23,602 training, 5,111 validation and 5,080 test images in 571 isolated sequence groups. Model results will be added only after annotation conversion and preprocessing analysis have been completed.
 
 ## Repository structure
 
@@ -86,3 +86,18 @@ The downloaded dataset remains in the local `FOD-A Dataset/` directory and is no
 5. Train and evaluate a lightweight object-detection baseline.
 6. Run controlled preprocessing and robustness experiments.
 7. Export reproducible figures, tables and notebook evidence for the report.
+
+## Reproduce the corrected split
+
+From the repository root, install the project and run:
+
+```bash
+python -m pip install -e '.[dev]'
+python scripts/build_leakage_resistant_split.py
+python scripts/verify_split.py
+pytest
+```
+
+The splitting rule combines consecutive image IDs, matching weather and lighting, matching source labels and adjacent-frame perceptual similarity. A difference-hash distance of 16 retains 98.65% of adjacent pairs whose metadata matches while breaking visually discontinuous runs. Assignment occurs at sequence-group level within each available weather-light combination.
+
+The frozen manifests and full verification summary are stored in `data/splits/final/`.

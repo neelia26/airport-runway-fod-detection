@@ -19,6 +19,7 @@
 /data/splits/*.csv
 /data/splits/*.json
 /data/splits/*.txt
+/data/splits/drafts/
 /models/
 /runs/
 /outputs/
@@ -27,6 +28,7 @@
 /reports/tables/generated/
 __pycache__/
 *.py[cod]
+*.egg-info/
 .pytest_cache/
 .ipynb_checkpoints/
 
