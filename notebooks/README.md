@@ -6,7 +6,7 @@ Planned notebook order:
 
 1. `01_exploratory_data_analysis.ipynb` — complete and executed
 2. `02_split_validation.ipynb`
-3. `03_preprocessing_analysis.ipynb`
+3. `03_preprocessing_analysis.ipynb` — complete and executed
 4. `04_model_training.ipynb`
 5. `05_evaluation.ipynb`
 6. `coursework_prototype.ipynb`
