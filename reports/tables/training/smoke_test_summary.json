@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "purpose": "Pipeline verification only; metrics are not model results.",
+  "model": "yolov8n.pt",
+  "target_class": "FOD",
+  "epochs": 1,
+  "training_images": 32,
+  "validation_images": 32,
+  "image_size": 320,
+  "batch_size": 4,
+  "device": "mps",
+  "python": "3.12.12",
+  "pytorch": "2.15.0",
+  "elapsed_seconds": 6.89,
+  "checkpoint_directory": "/Users/neeliamedhani/Machine Vision/runs/smoke/yolov8n_pipeline_check/weights",
+  "checks": {
+    "dataset_loaded": true,
+    "single_class_model_created": true,
+    "backpropagation_completed": true,
+    "validation_completed": true,
+    "checkpoint_saved": true
+  }
+}

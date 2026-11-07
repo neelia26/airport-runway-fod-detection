@@ -61,7 +61,7 @@ The project will therefore create a sequence-aware split before training. Aggreg
 
 ## Repository status
 
-The dataset audit, leakage-resistant partitioning, exploratory analysis, annotation conversion and taught-technique analysis stages are complete. The verified split contains 23,602 training, 5,111 validation and 5,080 test images in 571 isolated sequence groups. The EDA confirms 9,852 small, 15,960 medium and 8,660 large objects, alongside meaningful category associations with lighting and weather. All 34,472 source objects have been converted to the single model class `0: FOD`. The preprocessing evidence retains original images as the model baseline and mild Gaussian or median filtering only as controlled variants.
+The dataset audit, leakage-resistant partitioning, exploratory analysis, annotation conversion and taught-technique analysis stages are complete. The verified split contains 23,602 training, 5,111 validation and 5,080 test images in 571 isolated sequence groups. The EDA confirms 9,852 small, 15,960 medium and 8,660 large objects, alongside meaningful category associations with lighting and weather. All 34,472 source objects have been converted to the single model class `0: FOD`. The preprocessing evidence retains original images as the model baseline and mild Gaussian or median filtering only as controlled variants. The YOLOv8n MPS training pipeline has passed an end-to-end smoke test; full baseline training is the next compute-intensive step.
 
 ## Repository structure
 
@@ -140,3 +140,15 @@ python scripts/run_preprocessing_analysis.py
 ```
 
 The analysis uses one representative small object per capture sequence and compares local contrast, edge energy and surrounding variation. The executed notebook is stored at `notebooks/03_preprocessing_analysis.ipynb`, with figures and tables under `reports/figures/preprocessing/` and `reports/tables/preprocessing/`.
+
+## Baseline training
+
+The version-controlled protocol is documented in `docs/BASELINE_TRAINING.md`, and the configuration is stored in `configs/yolov8n_baseline.yaml`.
+
+```bash
+.venv-train/bin/python scripts/check_training_environment.py
+.venv-train/bin/python scripts/train_baseline.py --smoke-test
+.venv-train/bin/python scripts/train_baseline.py
+```
+
+The smoke test verifies data loading, single-class model construction, MPS backpropagation, validation and checkpoint saving. Its metrics are deliberately excluded from the research results because one epoch on 32 training images is not a meaningful experiment.

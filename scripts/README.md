@@ -10,3 +10,6 @@ Current commands:
 - `python scripts/convert_voc_to_yolo.py` validates Pascal VOC XML and creates the local single-class YOLO dataset.
 - `python scripts/verify_yolo_conversion.py` independently checks image-label coverage, object preservation and label syntax.
 - `python scripts/run_preprocessing_analysis.py` runs the sequence-balanced visibility experiment for the selected lecture techniques.
+- `python scripts/check_training_environment.py` verifies PyTorch, Ultralytics and Apple MPS availability.
+- `python scripts/train_baseline.py --smoke-test` validates the complete YOLO training pipeline on a tiny non-reportable subset.
+- `python scripts/train_baseline.py` starts the configured full YOLOv8n baseline run.

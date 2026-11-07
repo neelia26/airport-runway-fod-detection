@@ -1,0 +1,15 @@
+# Lightweight baseline configuration for the M1 MacBook Air.
+model: yolov8n.pt
+data: data/yolo/dataset.yaml
+epochs: 30
+imgsz: 320
+batch: 8
+workers: 2
+patience: 8
+seed: 42
+deterministic: true
+pretrained: true
+optimizer: auto
+project: runs/baseline
+name: yolov8n_original
+device: mps

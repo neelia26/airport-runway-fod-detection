@@ -2,8 +2,10 @@
 *.zip
 *.tar
 *.tar.gz
+*.pt
 .env
 .venv/
+.venv-train/
 .idea/
 .vscode/
 
