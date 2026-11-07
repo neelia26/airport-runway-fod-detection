@@ -23,6 +23,47 @@ In particular, **dim** means the dataset authors' intermediate light-level categ
 | `xmin`, `ymin` | Pascal VOC XML | Number | Pixel coordinates | Upper-left corner of the ground-truth bounding box. |
 | `xmax`, `ymax` | Pascal VOC XML | Number | Pixel coordinates | Lower-right corner of the ground-truth bounding box. |
 
+## Source debris categories
+
+FOD-A Version 2.1 contains 31 source categories and 34,472 annotated objects. The class names below reproduce the Pascal VOC annotations exactly, including their capitalisation. The descriptions provide a plain-language interpretation for readers; the dataset publisher does not provide a formal physical specification for every class.
+
+| Exact class name | Objects | Plain-language interpretation |
+|---|---:|---|
+| `Battery` | 1,059 | A loose portable battery that could become hazardous debris. |
+| `Bolt` | 3,300 | A threaded metal fastener without a separately labelled nut or washer assembly. |
+| `BoltWasher` | 1,017 | A bolt shown together with, or attached to, a washer. |
+| `ClampPart` | 917 | A component or fragment belonging to a clamp mechanism. |
+| `MetalPart` | 970 | A metal component or fragment not assigned to a more specific tool or fastener category. |
+| `Cutter` | 1,352 | A cutting tool, such as a utility cutter. |
+| `PlasticPart` | 2,008 | A plastic component or fragment without a more specific category. |
+| `LuggageTag` | 1,686 | A detached baggage or luggage identification tag. |
+| `Nail` | 1,193 | A slender pointed metal fastener. |
+| `Pliers` | 2,884 | A handheld gripping or cutting tool with two handles. |
+| `Label` | 1,310 | A loose printed or adhesive label distinct from the luggage-tag category. |
+| `Washer` | 2,139 | A flat ring-shaped fastener component. |
+| `Wrench` | 2,568 | A fixed-size hand tool used to turn nuts or bolts. |
+| `FuelCap` | 548 | A cap or cover associated with a fuel opening or container. |
+| `Nut` | 1,303 | A threaded fastening component normally paired with a bolt. |
+| `MetalSheet` | 394 | A flat, relatively thin piece or fragment of sheet metal. |
+| `Hose` | 294 | A loose length or section of flexible tubing. |
+| `AdjustableClamp` | 544 | A complete clamp whose opening or tension can be adjusted. |
+| `AdjustableWrench` | 472 | A wrench with a movable jaw. |
+| `BoltNutSet` | 514 | A bolt and nut presented together as one annotated assembly. |
+| `Hammer` | 760 | A handheld striking tool. |
+| `LuggagePart` | 738 | A detached baggage component other than a luggage tag. |
+| `PaintChip` | 968 | A detached flake or fragment of paint or surface coating. |
+| `Pen` | 483 | A loose writing pen. |
+| `Rock` | 662 | A loose stone or rock fragment. |
+| `Screw` | 157 | A threaded pointed fastener, distinct from the bolt category. |
+| `Screwdriver` | 811 | A handheld tool used to turn screws. |
+| `Wire` | 2,138 | A loose strand, cable or coil of wire. |
+| `SodaCan` | 950 | A discarded beverage can. |
+| `Tape` | 127 | A loose piece or roll of adhesive tape. |
+| `Wood` | 206 | A wooden piece, chip or fragment. |
+| **Total** | **34,472** | **All annotated objects in the audited dataset.** |
+
+These are the original fine-grained labels. The primary coursework detector will map all 31 categories to one safety-oriented class, `FOD`, because the main task is to locate hazardous debris. The original category will still be retained in metadata for distribution analysis and class-specific error analysis.
+
 ## Weather codes
 
 | Code | Label | Interpretation used in this project | Dataset limitation |
