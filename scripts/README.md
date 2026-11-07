@@ -9,3 +9,4 @@ Current commands:
 - `python scripts/run_eda.py` generates the exploratory-analysis tables, figures and example grids.
 - `python scripts/convert_voc_to_yolo.py` validates Pascal VOC XML and creates the local single-class YOLO dataset.
 - `python scripts/verify_yolo_conversion.py` independently checks image-label coverage, object preservation and label syntax.
+- `python scripts/run_preprocessing_analysis.py` runs the sequence-balanced visibility experiment for the selected lecture techniques.

@@ -1,0 +1,95 @@
+{
+  "small_objects_in_dataset": 9852,
+  "sequence_balanced_examples": 74,
+  "available_conditions": [
+    "Bright-Dry",
+    "Dark-Dry",
+    "Dim-Dry",
+    "Dim-Wet"
+  ],
+  "candidate_input_techniques": [
+    "Contrast stretch",
+    "CLAHE",
+    "Gaussian filter",
+    "Median filter",
+    "Sharpening"
+  ],
+  "diagnostic_techniques": [
+    "Sobel",
+    "Canny",
+    "Otsu threshold",
+    "Opening",
+    "Closing"
+  ],
+  "best_median_contrast_change": "Median filter",
+  "most_consistent_contrast_improvement": "Gaussian filter",
+  "training_recommendation": {
+    "primary_baseline": "Original images",
+    "controlled_variants": [
+      "Gaussian filter",
+      "Median filter"
+    ],
+    "not_recommended_as_default": [
+      "Contrast stretch",
+      "CLAHE",
+      "Sharpening",
+      "Sobel",
+      "Canny",
+      "Otsu threshold",
+      "Opening",
+      "Closing"
+    ],
+    "reason": "Mild filtering improved the local contrast-to-noise proxy but reduced edge energy. Enhancement and sharpening increased edges while usually reducing local contrast or amplifying pavement texture. Model experiments are required to resolve the trade-off."
+  },
+  "technique_results": [
+    {
+      "technique": "Original",
+      "median_contrast_change": 0.0,
+      "contrast_improved_percent": 0.0,
+      "median_edge_change": 0.0,
+      "edge_improved_percent": 0.0,
+      "median_background_std_change": 0.0
+    },
+    {
+      "technique": "Contrast stretch",
+      "median_contrast_change": -0.584521,
+      "contrast_improved_percent": 18.918919,
+      "median_edge_change": 113.905514,
+      "edge_improved_percent": 90.540541,
+      "median_background_std_change": 36.229692
+    },
+    {
+      "technique": "CLAHE",
+      "median_contrast_change": -0.554539,
+      "contrast_improved_percent": 22.972973,
+      "median_edge_change": 46.730799,
+      "edge_improved_percent": 98.648649,
+      "median_background_std_change": 8.039938
+    },
+    {
+      "technique": "Gaussian filter",
+      "median_contrast_change": 0.194905,
+      "contrast_improved_percent": 93.243243,
+      "median_edge_change": -22.142139,
+      "edge_improved_percent": 0.0,
+      "median_background_std_change": -0.857561
+    },
+    {
+      "technique": "Median filter",
+      "median_contrast_change": 0.199081,
+      "contrast_improved_percent": 87.837838,
+      "median_edge_change": -22.004963,
+      "edge_improved_percent": 0.0,
+      "median_background_std_change": -0.887222
+    },
+    {
+      "technique": "Sharpening",
+      "median_contrast_change": -0.935891,
+      "contrast_improved_percent": 6.756757,
+      "median_edge_change": 120.965,
+      "edge_improved_percent": 100.0,
+      "median_background_std_change": 6.909765
+    }
+  ],
+  "interpretation_warning": "Visibility proxies do not prove improved detector accuracy. Any promising transformation must be tested in a controlled model experiment."
+}
