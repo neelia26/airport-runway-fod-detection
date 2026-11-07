@@ -51,7 +51,7 @@ The project will therefore create a sequence-aware split before training. Aggreg
 
 ## Repository status
 
-The dataset audit and leakage-resistant partitioning stage is complete. The verified split contains 23,602 training, 5,111 validation and 5,080 test images in 571 isolated sequence groups. Model results will be added only after annotation conversion and preprocessing analysis have been completed.
+The dataset audit, leakage-resistant partitioning and exploratory analysis stages are complete. The verified split contains 23,602 training, 5,111 validation and 5,080 test images in 571 isolated sequence groups. The EDA confirms 9,852 small, 15,960 medium and 8,660 large objects, alongside meaningful category associations with lighting and weather. Model results will be added only after annotation conversion and preprocessing analysis have been completed.
 
 ## Repository structure
 
@@ -101,3 +101,13 @@ pytest
 The splitting rule combines consecutive image IDs, matching weather and lighting, matching source labels and adjacent-frame perceptual similarity. A difference-hash distance of 16 retains 98.65% of adjacent pairs whose metadata matches while breaking visually discontinuous runs. Assignment occurs at sequence-group level within each available weather-light combination.
 
 The frozen manifests and full verification summary are stored in `data/splits/final/`.
+
+## Reproduce the exploratory analysis
+
+```bash
+python -m pip install -e '.[dev,analysis]'
+python scripts/run_eda.py
+jupyter nbconvert --to notebook --execute --inplace notebooks/01_exploratory_data_analysis.ipynb
+```
+
+The executed notebook is stored at `notebooks/01_exploratory_data_analysis.ipynb`. Its report-ready figures and compact evidence tables are stored under `reports/figures/eda/` and `reports/tables/eda/`.

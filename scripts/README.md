@@ -6,3 +6,4 @@ Current commands:
 
 - `python scripts/build_leakage_resistant_split.py` rebuilds the frozen manifests.
 - `python scripts/verify_split.py` independently checks completeness, uniqueness and sequence isolation.
+- `python scripts/run_eda.py` generates the exploratory-analysis tables, figures and example grids.
