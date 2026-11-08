@@ -1,8 +1,9 @@
 {
   "run_name": "yolov8n_original_20261108_072156",
-  "status": "interrupted_after_epoch_27",
+  "status": "completed_by_early_stopping_at_epoch_27",
   "requested_epochs": 30,
   "recorded_epochs": 27,
+  "early_stopping_patience": 8,
   "training_time_seconds": 4975.21,
   "device": "NVIDIA T4 CUDA",
   "batch_size": 16,

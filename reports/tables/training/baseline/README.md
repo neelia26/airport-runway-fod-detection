@@ -2,7 +2,7 @@
 
 ## Run status
 
-This export is a genuine Colab T4 baseline run on the original FOD images. It contains 27 recorded epochs although the configuration requested 30. The run was interrupted by the Colab connection, so it must be reported as an interrupted baseline rather than a completed 30-epoch experiment.
+This export is a genuine completed Colab T4 baseline run on the original FOD images. Although the maximum was 30 epochs, training ended normally at epoch 27 through the configured early-stopping rule. The best mAP@50–95 occurred at epoch 19; eight subsequent epochs did not improve it, exhausting `patience: 8`. Therefore, rerunning the 30 epochs is neither required nor methodologically preferable.
 
 ## Configuration
 
@@ -15,7 +15,7 @@ This export is a genuine Colab T4 baseline run on the original FOD images. It co
 | Device | NVIDIA T4 CUDA |
 | Seed | 42 |
 | Requested epochs | 30 |
-| Recorded epochs | 27 |
+| Completed epochs | 27 (early stopping) |
 | Recorded training time | 4,975.21 seconds (82.92 minutes) |
 
 ## Validation findings

@@ -46,7 +46,7 @@ The full run is resumable from its generated `last.pt` checkpoint using Ultralyt
 
 ## Recorded baseline run
 
-The first exported Colab run is documented in `reports/tables/training/baseline/README.md`. It reached epoch 27 of the configured 30 epochs before the Colab connection ended. Its figures and complete epoch metrics are retained, but its validation results are not treated as final test-set performance. The locally retained `best.pt` and `last.pt` checkpoints can be used to resume or evaluate the run.
+The first exported Colab run is documented in `reports/tables/training/baseline/README.md`. It ended normally at epoch 27 through early stopping: the best mAP@50–95 occurred at epoch 19 and the configured patience of eight epochs was then exhausted. Its figures and complete epoch metrics are retained, but its validation results are not treated as final test-set performance. The locally retained `best.pt` checkpoint should be used for evaluation.
 
 ## Google Colab workflow
 
