@@ -9,3 +9,5 @@ The `eda/` directories contain the selected exploratory-analysis evidence genera
 The `annotation_conversion/` directories contain the compact verification summary and visual overlay produced during Pascal VOC to YOLO conversion. The full generated dataset remains outside Git.
 
 The `preprocessing/` directories contain intensity histograms, technique comparisons, visibility metrics and the evidence supporting the preprocessing decision.
+
+The `training/` table directory records environment and smoke-test evidence separately from reportable full-model results.
