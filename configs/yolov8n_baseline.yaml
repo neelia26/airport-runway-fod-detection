@@ -3,7 +3,7 @@ model: yolov8n.pt
 data: data/yolo/dataset.yaml
 epochs: 30
 imgsz: 320
-batch: 8
+batch: 16
 workers: 2
 patience: 8
 seed: 42
