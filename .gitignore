@@ -26,6 +26,7 @@
 /runs/
 /outputs/
 /tmp/
+/FOD Baseline Results/
 /reports/figures/generated/
 /reports/tables/generated/
 __pycache__/

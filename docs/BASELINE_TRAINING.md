@@ -12,13 +12,13 @@ The baseline is a lightweight single-class YOLOv8n detector trained on the origi
 | Target class | `0: FOD` | Safety-focused localisation of all 31 source categories |
 | Image size | 320 × 320 | Close to the native 300 × 300 resolution and manageable on the 8 GB M1 Mac |
 | Epochs | 30 maximum | Moderate coursework run with early stopping |
-| Batch size | 8 | Conservative M1 unified-memory setting |
+| Batch size | 16 | Stable use of the available NVIDIA T4 while keeping the experiment reproducible |
 | Patience | 8 epochs | Stops training if validation does not improve |
 | Seed | 42 | Controls repeatable data-order and augmentation choices |
-| Device | Apple MPS | Uses the M1 GPU through PyTorch |
+| Device | NVIDIA T4 (CUDA) | Practical accelerator available through Google Colab |
 | Dataset split | Leakage-resistant manifest | Prevents capture sequences crossing partitions |
 
-MPS currently warns that a small number of gradient operations do not have deterministic implementations. The seed and deterministic flag are retained, but exact bit-for-bit reproduction across hardware is not claimed.
+The seed and deterministic flag are retained, but exact bit-for-bit reproduction across different CUDA, PyTorch and Ultralytics versions is not claimed.
 
 ## Commands
 
@@ -43,6 +43,10 @@ Start the full baseline:
 ```
 
 The full run is resumable from its generated `last.pt` checkpoint using Ultralytics if interrupted. Training runs and weights remain excluded from Git because of their size; compact metrics and selected figures will be committed after verification.
+
+## Recorded baseline run
+
+The first exported Colab run is documented in `reports/tables/training/baseline/README.md`. It reached epoch 27 of the configured 30 epochs before the Colab connection ended. Its figures and complete epoch metrics are retained, but its validation results are not treated as final test-set performance. The locally retained `best.pt` and `last.pt` checkpoints can be used to resume or evaluate the run.
 
 ## Google Colab workflow
 
